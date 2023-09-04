@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:burger_app/constant/home_constant.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +11,7 @@ class HomePage extends StatelessWidget {
         title: const Text(
           HomeConstants.appTitle,
           style: TextStyle(
-            color: HomeConstants.appColor,
+            color: Color.fromARGB(255, 189, 159, 159),
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
@@ -21,13 +19,37 @@ class HomePage extends StatelessWidget {
         backgroundColor: HomeConstants.appBarBackground,
         elevation: 0.0,
         centerTitle: true,
-        leading: Container(
-          margin: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(10),
+        leading: GestureDetector(
+          onTap: () {},
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Image.asset(
+              HomeConstants.arrowIcon,
+              height: 20,
+              width: 20,
+            ),
           ),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              alignment: Alignment.center,
+              width: 37,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Image.asset(HomeConstants.dotIcon),
+            ),
+          ),
+        ],
       ),
     );
   }
